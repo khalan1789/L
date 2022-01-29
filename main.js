@@ -37,7 +37,7 @@ const infoParagraph = document.querySelector('.small-info');
 // zone info sous le click
 function commentInfo (count){
      if(count == 2){
-           infoParagraph.innerHTML = "Ah ça y es ça commence à venir !"
+           infoParagraph.innerHTML = "Ah ça y est ça commence à venir !"
       }
     if(count == 4){
           infoParagraph.innerHTML= "Là ça devient mieux déjà, hein !!?";
