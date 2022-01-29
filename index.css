@@ -1,6 +1,8 @@
 body {
     margin: 0;
-    background-color: rgb(188, 223, 253);
+    /* background-color: rgb(188, 223, 253); */
+    background: linear-gradient(to right bottom, rgb(122, 219, 236), rgb(247, 157, 227));
+    height: 100vh;
 }
 
 .container {
@@ -33,6 +35,6 @@ img {
 .small-info {
     display: flex;
     font-style: italic;
-    color: rgb(111, 30, 240);
+    color: rgba(175, 38, 157, 0.966);
     text-align: center;
 }
