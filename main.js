@@ -7,14 +7,26 @@ const btn = document.getElementById('btn')
 // comptage des clics
 let totalClicks = 0;
 
+
 // fonction au clic du bouton : doit faire l'appel api et changer l'image dans la zone d'image suite au retour api
+
 const imgDiv = document.getElementsByClassName('img-contain');
+
+
 function searchImg () {
+    // sélection du container pour l'image
     const imgContainer = document.querySelector(".img-contain")
     const imgLoaded = document.querySelector(".img-loaded")
+
+    // sélection du container du loader
+    const loader = document.querySelector('.loader')
+
     if(imgLoaded) {
         imgContainer.removeChild(imgLoaded)
     }
+
+    loader.classList.remove('hidden')
+    imgContainer.classList.add('hidden')
     fetch(apiToFetch)
     .then((response) => response.json())
     // .then((image) => console.log(image.image))
@@ -24,8 +36,9 @@ function searchImg () {
     //     const imgDiv = `<img src=dataImg />`
       imgContainer.insertAdjacentHTML("afterbegin", `<img class="img-loaded" src=${data.image} alt="photo de voiture"/>`);
       totalClicks +=1;
-      console.log("clicks :" +totalClicks)
       commentInfo(totalClicks)
+      loader.classList.add('hidden')
+      imgContainer.classList.remove('hidden')
     } )
 }
 

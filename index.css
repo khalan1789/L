@@ -38,3 +38,45 @@ img {
     color: rgba(175, 38, 157, 0.966);
     text-align: center;
 }
+
+.hidden {
+    display: none;
+}
+
+/* Loader  */
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    } 
+}
+
+.loader {
+    position: relative;
+    height: 0;
+    width: 0;
+    border: 6px solid rgb(98, 194, 238);
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: rotate 1s infinite linear;
+    padding: 46px
+}
+
+.loader::after {
+        content: '';
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        right: 4px;
+        bottom: 4px;
+        border: 3px solid rgb(247, 48, 204);
+        animation: rotate 10s linear infinite;
+        border-bottom-color: transparent;
+        border-top-color: transparent;
+        padding: 36px;
+        border-radius: 50%;
+}
